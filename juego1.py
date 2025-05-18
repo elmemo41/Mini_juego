@@ -6,95 +6,66 @@ def lanzamiento():
     return random.randint(1, 6)
 
 
-def juego_dados():
+def mostrar_dado(valor):
+
+    caras = {
+        6: """-------
+|*   *|
+|*   *|
+|*   *|
+-------""",
+
+        5: """-------
+|*   *|
+|  *  |
+|*   *|
+-------""",
+
+        4: """-------
+|*   *|
+|     |
+|*   *|
+-------""",
+
+        3: """-------
+| *   |
+|  *  |
+|   * |
+-------""",
+
+        2: """-------
+| *   |
+|     |
+|   * |
+-------""",
+
+        1: """-------
+|     |
+|  *  |
+|     |
+-------"""
+    }
+    print(caras[valor])
+
+
+def juego_de_dados():
 
     while True:
-        input("presiona enter para lanzar los dados")
+        cls()
+        input("Presione enter para lanzar el dado")
+        valor = lanzamiento()
+        mostrar_dado(valor)
 
-        if lanzamiento() == 6:
-            print("""-------
-|*   *|
-|*   *|
-|*   *|
--------""")
-            print("Quiere lanzar el dado otra vez \n 1)si 2)no")
-            opcion = obtener_opcion(2)
+        print("Quiere lanzarlo otra vez? \n 1)si 2)no")
 
-            if opcion == 1:
-                juego_dados()
-            else:
-                print("Hasta luego")
-            break
+        opcion = obtener_opcion(2)
 
-        elif lanzamiento() == 5:
-            print("""-------
-|*   *|
-|  *  |
-|*   *|
--------""")
-            print("Quiere lanzar el dado otra vez \n 1)si 2)no")
-            opcion = obtener_opcion(2)
-            if opcion == 1:
-                juego_dados()
-            else:
-                print("Hasta luego")
-                break
-        elif lanzamiento() == 4:
-            print("""-------
-|*   *|
-|     |
-|*   *|
--------""")
-            print("Quiere lanzar el dado otra vez \n 1)si 2)no")
-            opcion = obtener_opcion(2)
-            if opcion == 1:
-                juego_dados()
-            else:
-                print("Hasta luego")
-                break
-        elif lanzamiento() == 3:
-            print("""-------
-| *   |
-|  *  |
-|   * |
--------""")
-            print("Quiere lanzar el dado otra vez \n 1)si 2)no")
-            opcion = obtener_opcion(2)
-            if opcion == 1:
-                juego_dados()
-            else:
-                print("Hasta luego")
-                break
-        elif lanzamiento() == 2:
-            print("""-------
-| *   |
-|     |
-|   * |
--------""")
-            print("Quiere lanzar el dado otra vez \n 1)si 2)no")
-            opcion = obtener_opcion(2)
-            if opcion == 1:
-                juego_dados()
-            else:
-                print("Hasta luego")
-                break
-        elif lanzamiento() == 1:
-            print("""-------
-|     |
-|  *  |
-|     |
--------""")
-            print("Quiere lanzar el dado otra vez \n 1)si 2)no")
-            opcion = obtener_opcion(2)
-            if opcion == 1:
-                juego_dados()
-            else:
-                print("Hasta luego")
+        if opcion == 1:
+            juego_de_dados()
 
-            break
-
-        else:
-            print("Pongalo bien1")
+        elif opcion == 2:
+            print("Hasta luego")
+        break
 
 
-juego_dados()
+juego_de_dados()
