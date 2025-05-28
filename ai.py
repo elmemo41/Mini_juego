@@ -25,6 +25,7 @@ class PiedraPapelTijeraAi:
     def predecir(self,jugadas_usuario):
         if not self.entrenado or len(jugadas_usuario)<2:
             return np.random.choice([0,1,2])
-        entrada = {jugadas_usuario [-2], jugadas_usuario[-1]}
+        entrada = [jugadas_usuario[-2], jugadas_usuario[-1]]
         pred = self.modelo.predict([entrada])[0]
+
         return(pred+1)%3

@@ -37,7 +37,7 @@ def jugar():
 
         historial["jugadas_usuario"].append(jugador)
         historial["jugadas_ia"].append(ia)
-        ia.entrenar(historial["jugadas_usuario"])
+        ai.entrenar(historial["jugadas_usuario"])
         guardar_historial(historial)
         mostrar_estadisticas(historial)
 

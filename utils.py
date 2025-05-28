@@ -23,3 +23,19 @@ def cargar_modelo():
         with open(MODEL_PATH,"rb")as f:
             return pickle.load(f)
     return None
+
+
+def obtener_opcion(max_opcion):
+    while True:
+        try:
+            opcion = int(input("# ELIGE UNA OPCION: "))
+            if 1 <= opcion <= max_opcion:
+                return opcion
+            else:
+                print(f"Por favor ingresa un numero entre 1 y {max_opcion}")
+        except ValueError:
+            print("Entrada no valida. Ingresa un numero.")
+
+
+def cls():
+    os.system('cls' if os.name == 'nt' else 'clear')
